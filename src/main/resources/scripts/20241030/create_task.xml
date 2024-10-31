@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="create_tasks" author="Dmitry Osipov">
+        <sql>
+            CREATE TABLE tasks (
+                id SERIAL PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                description TEXT,
+                remind_at TIMESTAMP NOT NULL,
+                repeat_interval INTERVAL NOT NULL DEFAULT '1 month'
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>

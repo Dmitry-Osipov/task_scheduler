@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: task_scheduler
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/task
+    username: task_user
+    password: 46Gx3X9nT1tABLf2Mu
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+
+  liquibase:
+    change-log: classpath:scripts/0001_changelog.xml
+    liquibaseSchema: task
+    default-schema: task
